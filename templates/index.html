@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autocomplete Service</title>
+</head>
+
+<body>
+    <label for="search-input">Search:</label>
+    <input type="text" id="search-input" oninput="getSuggestions(this.value)">
+    <ul id="suggestions-list"></ul>
+
+    <script>
+        function getSuggestions(query) {
+            if (query.length < 3) {
+                return;
+            }
+
+            fetch(`/autocomplete?query=${query}`)
+                .then(response => response.json())
+                .then(data => {
+                    const suggestionsList = document.getElementById('suggestions-list');
+                    suggestionsList.innerHTML = '';
+
+                    data.forEach(suggestion => {
+                        const li = document.createElement('li');
+                        li.textContent = suggestion;
+                        suggestionsList.appendChild(li);
+                    });
+                });
+        }
+    </script>
+</body>
+</html>

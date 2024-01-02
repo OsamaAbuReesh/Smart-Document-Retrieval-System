@@ -1,5 +1,11 @@
 {
     "[python]": {
         "editor.defaultFormatter": "Jota0222.multi-formatter"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "vscode.css-language-features"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
     }
 }
