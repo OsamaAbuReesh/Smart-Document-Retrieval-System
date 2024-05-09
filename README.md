@@ -20,7 +20,3 @@ This repository hosts a powerful document retrieval system designed to interpret
 3. Set up Elasticsearch and configure the system accordingly.
 4. Run the application and start querying documents using tuples.
 5. Utilize Kibana for advanced visualization of search results and system performance metrics.
-
----
-
-Feel free to adjust or expand upon this description as needed!
